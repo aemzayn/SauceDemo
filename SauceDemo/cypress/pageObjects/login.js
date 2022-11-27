@@ -1,18 +1,22 @@
 
 export class Login {
-    navigate(){
+    navigate() {
         cy.visit("https://www.saucedemo.com/")
     }
-    typeUsernameTextBox(username){
+
+    typeUsernameTextBox(username) {
         cy.get("#user-name").clear().type(username)
     }
-    typePasswordTextBox(password){
+
+    typePasswordTextBox(password) {
         cy.get("#password").clear().type(password)
     }
-    clickLoginButton(){
+
+    clickLoginButton() {
         cy.get("#login-button").click()
     }
-    login(user){
+
+    login(user) {
         this.typeUsernameTextBox(user.username)
         this.typePasswordTextBox(user.password)
         this.clickLoginButton()

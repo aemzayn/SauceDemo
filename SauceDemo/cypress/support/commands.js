@@ -24,14 +24,16 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import {Login} from "../pageObjects/login";
+import { Login } from "../pageObjects/login";
 
 const login = new Login();
 
-Cypress.Commands.add('login',(user) => {
+Cypress.Commands.add('login', (user) => {
     login.typeUsernameTextBox(user.username)
     login.typePasswordTextBox(user.password)
     login.clickLoginButton()
 })
 
-
+Cypress.Commands.add('getBySel', (selector, ...args) => {
+    return cy.get(`[data-test=${selector}]`, ...args)
+})
