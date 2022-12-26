@@ -28,12 +28,12 @@ import { Login } from "../pageObjects/login";
 
 const login = new Login();
 
-Cypress.Commands.add('login', (user) => {
-    login.typeUsernameTextBox(user.username)
-    login.typePasswordTextBox(user.password)
-    login.clickLoginButton()
-})
+Cypress.Commands.add("login", (user) => {
+  login.typeUsernameTextBox(user.username);
+  login.typePasswordTextBox(user.password);
+  login.clickLoginButton();
+});
 
-Cypress.Commands.add('getBySel', (selector, ...args) => {
-    return cy.get(`[data-test=${selector}]`, ...args)
-})
+Cypress.Commands.add("getBySel", (selector, ...args) => {
+  return cy.get(`[data-test=${selector}]`, ...args);
+});
